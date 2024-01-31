@@ -28,8 +28,8 @@ def menu():
               ,  /##*/%                                   
               ,  /##//%         [00]: Salir.                          
              ,,  ,/(,*/#        [01]: Volver al menú.                          
-            *,   (##%///#       [02]: Realizar una búsqueda en plataformas con Sherlock.                         
-            *,   (##%//(#                                 
+            *,   (##%///#       [02]: Generar una wordlist con crunch (de palabras).                     
+            *,   (##%//(#       [03]: Poner al día todos los paquetes.                          
             *,   ###%//(#                                 
             *,  .#%#%//(#                                 
             *,  .#%%%//(#                                 
@@ -60,13 +60,28 @@ def menu():
             menu()
 
       elif choice == '02':
-            print(Fore.YELLOW + Back.RESET + '\n[#] Ingresa el nombre de usuario: ')
+            print(Fore.YELLOW + Back.RESET + '\n[#] Ingresa la cantidad mínima de caracteres: ')
+            choice = input(Fore.YELLOW + Back.RESET + '[#]> ')
+            print(Fore.YELLOW + Back.RESET + '\n[#] Ingresa la cantidad máxima de caracteres: ')
+            choice2 = input(Fore.YELLOW + Back.RESET + '[#]> ')
             print('[#]> ------------------------------------------------------------------------- <[#]')
-            os.system(f'cd .. && cd sherlock && python3 sherlock {choice}')
+            os.system(f'crunch {choice} {choice2}')
             print('[#]> ------------------------------------------------------------------------- <[#]')
             print('\n[#] Presiona ENTER para volver al menú.')
             choice = input(Fore.YELLOW + Back.RESET + '\n[#]> ')
             menu()
+
+      elif choice == '03':
+            print('\n[#] En proceso...')
+            print('[#]> ------------------------------------------------------------------------- <[#]')
+            os.system('sudo apt update && sudo dist-upgrade -y && sudo apt autoremove .y && sudo apt update && sudo apt -y upgrade && sudo apt -y full-upgrade && sudo apt dist-upgrade')
+            os.system("alias fullupgrade='sudo apt update && sudo dist-upgrade -y && sudo apt autoremove .y && sudo apt update && sudo apt -y upgrade && sudo apt -y full-upgrade && sudo apt dist-upgrade'")
+            print('[#]> ------------------------------------------------------------------------- <[#]')
+            print('[#] A partir de ahora, usa el comando fullupgrade para actualizarlo todo.')
+            print('\n[#] Presiona ENTER para volver al menú.')
+            choice = input(Fore.YELLOW + Back.RESET + '\n[#]> ')
+            menu()
+      
 
       else:
             print('\n[#] Error: Command not found :(. Presiona ENTER para volver al menú.')

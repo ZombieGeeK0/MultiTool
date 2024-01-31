@@ -62,7 +62,7 @@ def menu():
       elif choice == '02':
             print(Fore.YELLOW + Back.RESET + '\n[#] Ingresa el nombre de usuario: ')
             print('[#]> ------------------------------------------------------------------------- <[#]')
-            os.system(f'cd .. && cd Sherlock && python3 sherlock {choice}')
+            os.system(f'cd .. && cd sherlock && python3 sherlock {choice}')
             print('[#]> ------------------------------------------------------------------------- <[#]')
             print('\n[#] Presiona ENTER para volver al menú.')
             choice = input(Fore.YELLOW + Back.RESET + '\n[#]> ')

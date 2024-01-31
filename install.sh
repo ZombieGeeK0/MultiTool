@@ -10,6 +10,7 @@ pip3 install os
 pip3 install colarama
 pip3 install socket
 pip3 install sys
+cd..
 git clone https://github.com/sherlock-project/sherlock.git
 cd sherlock
 python3 -m pip install -r requirements.txt

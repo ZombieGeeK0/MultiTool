@@ -30,7 +30,7 @@ def menu():
              ,,  ,/(,*/#        [01]: Volver al menú.                          
             *,   (##%///#       [02]: Generar una wordlist con crunch (de palabras).                     
             *,   (##%//(#       [03]: Poner al día todos los paquetes.                          
-            *,   ###%//(#                                 
+            *,   ###%//(#       [04]: Hacerle un Whois a un dominio o a una IP.                          
             *,  .#%#%//(#                                 
             *,  .#%%%//(#                                 
             *,  .#%%%//(#                                 
@@ -78,6 +78,16 @@ def menu():
             os.system("alias fullupgrade='sudo apt update && sudo dist-upgrade -y && sudo apt autoremove .y && sudo apt update && sudo apt -y upgrade && sudo apt -y full-upgrade && sudo apt dist-upgrade'")
             print('[#]> ------------------------------------------------------------------------- <[#]')
             print('[#] A partir de ahora, usa el comando fullupgrade para actualizarlo todo.')
+            print('\n[#] Presiona ENTER para volver al menú.')
+            choice = input(Fore.YELLOW + Back.RESET + '\n[#]> ')
+            menu()
+
+      elif choice == '04':
+            print('\n[#] Ingresa el nombre de dominio o la IP.')
+            choice = input('[#]> ')
+            print('[#]> ------------------------------------------------------------------------- <[#]')
+            os.system(f'whois {choice}')
+            print('[#]> ------------------------------------------------------------------------- <[#]')
             print('\n[#] Presiona ENTER para volver al menú.')
             choice = input(Fore.YELLOW + Back.RESET + '\n[#]> ')
             menu()

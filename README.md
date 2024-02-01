@@ -19,7 +19,7 @@
 
       python3 main.py
 
-imagen
+[![image.png](https://i.postimg.cc/ZYLY0Q3R/image.png)](https://postimg.cc/G9Hn5qXw)
 
 <hr>
 
